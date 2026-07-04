@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matched Donors</title>
+    <link rel="stylesheet" href="./request.css">
+</head>
+<style>
+    h1{
+        color: black;
+    }
+    a{
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+    <!-- Go Home Icon -->
+    <a href="/" class="home-icon">🏠</a>
+
+    <h1>✅ Blood Request Submitted Successfully!</h1>
+    <h2>🔎 Matched Donors (Sorted by Distance):</h2>
+
+    <ul id="donorList">
+        <!-- Donor List Will Be Populated Here -->
+    </ul>
+
+    <a href="/"><h1 >⇄ Go Back</h1> </a>
+
+    <script>
+        // Retrieve matched donors from query params
+        const urlParams = new URLSearchParams(window.location.search);
+        const donors = JSON.parse(urlParams.get('donors') || '[]');
+
+        const donorList = document.getElementById('donorList');
+
+        if (donors.length === 0) {
+            donorList.innerHTML = '<p>❌ No matching donors found. </p>';
+        } else {
+            donors.forEach(donor => {
+                const li = document.createElement('li');
+                li.innerHTML = `${donor.name} (Age: ${donor.age}) -  ${donor.contact} (${donor.city}) - 📍 ${donor.distance} km away`;
+                donorList.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

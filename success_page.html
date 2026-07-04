@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Success</title>
+    <link rel="stylesheet" href=./style.css">
+</head>
+<style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+        background:#f5f5f5;
+    }
+
+    .container{
+        position:relative;
+        width:100%;
+        min-height:100vh;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+
+        overflow:hidden;
+    }
+
+    /* Background Logo */
+    .container::before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+
+        background:url("logo.png") no-repeat center center;
+        background-size:450px;
+        opacity:0.2;
+        z-index:-1;
+    }
+
+    /* Home Icon */
+    .home-icon{
+        position:absolute;
+        top:20px;
+        left:20px;
+        font-size:35px;
+        text-decoration:none;
+    }
+
+    h1{
+        color:#d32f2f;
+        font-size:48px;
+        margin-bottom:20px;
+    }
+
+    p{
+        font-size:22px;
+        color:#444;
+        margin-bottom:30px;
+        max-width:700px;
+        line-height:1.6;
+    }
+
+    .back-btn{
+        text-decoration:none;
+        background:#d32f2f;
+        color:white;
+        padding:14px 30px;
+        border-radius:8px;
+        font-size:20px;
+        transition:.3s;
+    }
+
+    .back-btn:hover{
+        background:#b71c1c;
+        transform:scale(1.05);
+    }
+
+</style>
+
+
+
+
+<body>
+    
+    <!-- 🏠 Go Home Icon -->
+    <!-- <div class="logo-container">
+        <img src="./logo.png" alt="Blood Connect Logo" class="logo">
+    </div> -->
+    
+   
+    
+    <div class="container"  >
+        <a href="/" class="home-icon"><h1>🏠</h1></a>
+        <h1>✅ Registration Successful!</h1>
+        <p>Thank you for registering as a blood donor. Your contribution can save lives. 💖</p>
+        <a href="/" class="back-btn">🔙 Back to Home</a>
+    </div>
+</body>
+
+</html>
